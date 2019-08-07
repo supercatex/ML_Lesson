@@ -13,11 +13,11 @@ import keras.backend.tensorflow_backend as KTF
 
 KTF.set_session(tf.Session(config=tf.ConfigProto(device_count={'gpu': 0})))
 
-_model_name = "models/m20190807-9.h5"
+_model_name = "models/m3_6.h5"
 
 _need_to_train = False
 _num_of_classes = 120
-_image_size = 25
+_image_size = 30
 
 if os.path.exists(_model_name):
     _model = load_model(_model_name)
@@ -41,11 +41,11 @@ if _need_to_train:
         dir_img="img",
         csv="data.csv",
         image_size=(_image_size, _image_size),
-        limit=-1
+        limit=5000
     )
 
     _X2, _y2 = import_data(
-        dir_root="MacauAI_TrainingSet_1",
+        dir_root="MacauAI_TrainingSet_3",
         dir_img="img",
         csv="training.csv",
         image_size=(_image_size, _image_size),
