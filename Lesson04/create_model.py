@@ -57,27 +57,27 @@ def create_model(input_shape, num_of_classes):
     x = Flatten()(x)
 
     x = Dense(
-        units=128,
+        units=120,
         activation="relu"
     )(x)
 
     x = Dense(
-        units=128,
+        units=120,
         activation="relu"
     )(x)
 
     x = Dense(
-        units=128,
+        units=120,
         activation="relu"
     )(x)
 
     x = Dense(
-        units=128,
+        units=120,
         activation="relu"
     )(x)
 
     x = Dense(
-        units=128,
+        units=120,
         activation="relu"
     )(x)
 

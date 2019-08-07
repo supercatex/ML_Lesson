@@ -13,11 +13,11 @@ import keras.backend.tensorflow_backend as KTF
 
 KTF.set_session(tf.Session(config=tf.ConfigProto(device_count={'gpu': 0})))
 
-_model_name = "models/m20190807-8.h5"
+_model_name = "models/m20190807-9.h5"
 
 _need_to_train = False
 _num_of_classes = 120
-_image_size = 30
+_image_size = 25
 
 if os.path.exists(_model_name):
     _model = load_model(_model_name)
