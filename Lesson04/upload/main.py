@@ -9,7 +9,7 @@ _ROOT = "../MacauAI_TrainingSet_1/"
 _CSV = os.path.join(_ROOT, "training.csv")
 
 data = pd.read_csv(_CSV, sep=",")
-y = predict(data, _ROOT, "./upload2",)
+y = predict(data, _ROOT, "./upload",)
 
 n = 0
 c = 0

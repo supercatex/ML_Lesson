@@ -46,7 +46,20 @@ def create_model(input_shape, num_of_classes):
         activation="relu"
     )(x)
 
+    x = Conv2D(
+        filters=8,
+        kernel_size=(3, 3),
+        padding="same",
+        strides=(1, 1),
+        activation="relu"
+    )(x)
+
     x = Flatten()(x)
+
+    x = Dense(
+        units=128,
+        activation="relu"
+    )(x)
 
     x = Dense(
         units=128,
