@@ -35,7 +35,7 @@ def predict(image_df, testpath, submitpath):
 
 		img = cv2.imread(imagepath, cv2.IMREAD_COLOR)
 		img = img[min(y1, y2):max(y1, y2), min(x1, x2):max(x1, x2)]
-		size = 25
+		size = 64
 		# [FREE TO UPDATE - begin] The prediction being made by your logic and / or model(s)
 		x = cv2.resize(img, (size, size), interpolation=cv2.INTER_CUBIC)
 		x = x.astype(np.float32)

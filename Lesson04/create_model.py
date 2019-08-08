@@ -20,6 +20,14 @@ def create_model(input_shape, num_of_classes):
         activation="relu"
     )(inputs)
 
+    x = Conv2D(
+        filters=4,
+        kernel_size=(3, 3),
+        padding="same",
+        strides=(1, 1),
+        activation="relu"
+    )(x)
+
     x = MaxPooling2D(pool_size=(2, 2))(x)
 
     x = Conv2D(
@@ -46,8 +54,26 @@ def create_model(input_shape, num_of_classes):
         activation="relu"
     )(x)
 
+    x = MaxPooling2D(pool_size=(2, 2))(x)
+
     x = Conv2D(
-        filters=8,
+        filters=16,
+        kernel_size=(3, 3),
+        padding="same",
+        strides=(1, 1),
+        activation="relu"
+    )(x)
+
+    x = Conv2D(
+        filters=16,
+        kernel_size=(3, 3),
+        padding="same",
+        strides=(1, 1),
+        activation="relu"
+    )(x)
+
+    x = Conv2D(
+        filters=16,
         kernel_size=(3, 3),
         padding="same",
         strides=(1, 1),
@@ -57,22 +83,37 @@ def create_model(input_shape, num_of_classes):
     x = Flatten()(x)
 
     x = Dense(
-        units=128,
+        units=120,
         activation="relu"
     )(x)
 
     x = Dense(
-        units=128,
+        units=120,
         activation="relu"
     )(x)
 
     x = Dense(
-        units=128,
+        units=120,
         activation="relu"
     )(x)
 
     x = Dense(
-        units=128,
+        units=120,
+        activation="relu"
+    )(x)
+
+    x = Dense(
+        units=120,
+        activation="relu"
+    )(x)
+
+    x = Dense(
+        units=120,
+        activation="relu"
+    )(x)
+
+    x = Dense(
+        units=120,
         activation="relu"
     )(x)
 

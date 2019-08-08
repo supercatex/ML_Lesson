@@ -13,11 +13,11 @@ import keras.backend.tensorflow_backend as KTF
 
 KTF.set_session(tf.Session(config=tf.ConfigProto(device_count={'gpu': 0})))
 
-_model_name = "models/sign_1.h5"
+_model_name = "models/sign.h5"
 
 _need_to_train = False
 _num_of_classes = 120
-_image_size = 25
+_image_size = 64
 
 if os.path.exists(_model_name):
     _model = load_model(_model_name)
@@ -39,21 +39,21 @@ if _need_to_train:
     _X, _y = import_data(
         dir_root="../../dataset",
         dir_img="img",
-        csv="data.csv",
-        image_size=(_image_size, _image_size),
-        limit=1
-    )
-
-    _X2, _y2 = import_data(
-        dir_root="MacauAI_TrainingSet_3",
-        dir_img="img",
         csv="training.csv",
         image_size=(_image_size, _image_size),
         limit=-1
     )
 
-    _X = np.concatenate((_X, _X2))
-    _y = np.concatenate((_y, _y2))
+    # _X2, _y2 = import_data(
+    #     dir_root="MacauAI_TrainingSet_3",
+    #     dir_img="img",
+    #     csv="training.csv",
+    #     image_size=(_image_size, _image_size),
+    #     limit=-1
+    # )
+    #
+    # _X = np.concatenate((_X, _X2))
+    # _y = np.concatenate((_y, _y2))
     data = list(zip(_X, _y))
 
     for i in range(10000):
